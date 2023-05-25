@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Converter from './components/converter'
+import Coin from './components/Coin'
 
 function App() {
   
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <h3>Currency Converter</h3>
-      <Converter></Converter>
+      <Coin />
     </>
   )
 }

@@ -1,16 +1,37 @@
-const real = 1;
-const dolar = 0.2;
-const euro = 0.19;
-const libra = 0.16;
+import { useState } from "react";
+import Converter from "./converter";
 
 function Coin() {
-  //if input 1 === real && input 2 === dolar ? return 0.2*real
-  //if input 1 ===
+  const [firstInput, secondInput] = useState("");
+  const [firstOption, secondOption] = useState("Dolar");
+  
+  function inputChangeHandler(e) {
+    if (firstOption === "Dolar") {
+      secondInput(e.target.value * 0.2);
+    } else if (firstOption === "Euro") {
+      secondInput(e.target.value * 0.18);
+    } else if (firstOption === "Libra") {
+      secondInput(e.target.value * 0.16);
+    }
+  }
+
+  function optionChangeHandler(e) {
+    secondOption(e.target.value);
+  }
+
   return (
     <>
-      <Converter onCoinChange={coinConverter} />
+      <Converter
+        onInputChange={inputChangeHandler}
+        onOptionChange={optionChangeHandler}
+      />
+      <p>
+        Valor em {firstOption}: {firstInput}
+      </p>
     </>
   );
 }
 
 export default Coin;
+
+
