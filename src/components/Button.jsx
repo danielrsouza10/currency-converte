@@ -1,6 +1,11 @@
 function Button(){
+
+    function handleClick(event){
+        console.log('You click me');
+    }
+
     return(
-        <button>Converter</button>
+        <button onClick={handleClick}>Converter</button>
     )
 }
 
