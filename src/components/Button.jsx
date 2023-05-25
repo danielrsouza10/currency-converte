@@ -1,11 +1,7 @@
-function Button(){
-
-    function handleClick(event){
-        console.log('You click me');
-    }
+function Button(props){
 
     return(
-        <button onClick={handleClick}>Converter</button>
+        <button onClick={props.onButtonClick}>Converter</button>
     )
 }
 
