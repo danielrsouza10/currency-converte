@@ -10,11 +10,11 @@ function Converter(props) {
 
   function buttonHandler() {
     if (userOption === "Dolar") {
-      setResult(inputValue * 0.2);
+      setResult("US$ " + inputValue * 0.2);
     } else if (userOption === "Euro") {
-      setResult(inputValue * 0.18);
+      setResult("€ " + inputValue * 0.18);
     } else {
-      setResult(inputValue * 0.16);
+      setResult("£ " + inputValue * 0.16);
     }
   }
 
@@ -28,24 +28,37 @@ function Converter(props) {
   }
 
   return (
-    <div>
-      <Input onInputChange={inputHandler} />
+    <>
+      <div className={classes.input}>
+        
 
-      <div>
-        <select name="moedas" id="moedas" onChange={optionHandler}>
-          <option value="Dolar">Dolar</option>
-          <option value="Euro">Euro</option>
-          <option value="Libra">Libra</option>
-        </select>
+        <div>
+        <Input onInputChange={inputHandler}/>
+          <select name="moedas" id="moedas" onChange={optionHandler}>
+            <option value="Dolar">Real</option>
+            <option value="Dolar">Dolar</option>
+            <option value="Euro">Euro</option>
+            <option value="Libra">Libra</option>
+          </select>
+        </div>
+
+        
+        <div>
+        <Input onInputChange={inputHandler} />
+          <select name="moedas" id="moedas" onChange={optionHandler}>
+            <option value="Dolar">Real</option>
+            <option value="Dolar">Dolar</option>
+            <option value="Euro">Euro</option>
+            <option value="Libra">Libra</option>
+          </select>
+        </div>
       </div>
-
       <div>
         <Button onButtonClick={buttonHandler} />
 
         <p>{result}</p>
-        <p>R$ {inputValue} = {userOption} = {result}</p>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -23,3 +23,8 @@ label {
 select{
   width: 100px;
 }
+
+.input{
+  display: flex;
+  gap: 10px;
+}

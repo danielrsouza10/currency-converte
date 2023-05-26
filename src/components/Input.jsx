@@ -1,9 +1,12 @@
 function Input(props) {
   return (
+    <>
     <div>
-      <label htmlFor="number">Valor em Real</label>
-      <input type="number" id="number" onChange={props.onInputChange} />
+     
+      <input type="number" id="number" onChange={props.onInputChange} placeholder="R$ 0.00"/>
     </div>
+    
+    </>
   );
 }
 
