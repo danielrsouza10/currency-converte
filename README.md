@@ -33,7 +33,6 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GithHub Repository](https://github.com/danielrsouza10/currency-converte)
-- Live Site URL: [Currency Converter](https://danielrsouza10.github.io/currency-converte/)
 
 ## My process
 
