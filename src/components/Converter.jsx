@@ -10,15 +10,18 @@ function Converter(props) {
 
   function buttonHandler() {
     if (userOption === "Dolar") {
-      setResult("US$ " + inputValue * 0.2);
+      setResult("US$ " + (inputValue * 0.2).toFixed(2));
     } else if (userOption === "Euro") {
-      setResult("€ " + inputValue * 0.18);
-    } else {
-      setResult("£ " + inputValue * 0.16);
+      setResult("€ " + (inputValue * 0.18).toFixed(2));
+    } else if (userOption === "Libra"){
+      setResult("£ " + (inputValue * 0.16).toFixed(2));
+    } else{
+      setResult('$ ' + (inputValue * 47.25).toFixed(2));
     }
   }
 
   function inputHandler(e) {
+    setResult("");
     setInputValue(e.target.value);
   }
 
@@ -30,34 +33,23 @@ function Converter(props) {
   return (
     <>
       <div className={classes.input}>
-        
-
+      <Input onInputChange={inputHandler} />
         <div>
-        <Input onInputChange={inputHandler}/>
+          <label htmlFor="moedas">Selecione a moeda:</label>
           <select name="moedas" id="moedas" onChange={optionHandler}>
-            <option value="Dolar">Real</option>
             <option value="Dolar">Dolar</option>
             <option value="Euro">Euro</option>
             <option value="Libra">Libra</option>
-          </select>
-        </div>
-
-        
-        <div>
-        <Input onInputChange={inputHandler} />
-          <select name="moedas" id="moedas" onChange={optionHandler}>
-            <option value="Dolar">Real</option>
-            <option value="Dolar">Dolar</option>
-            <option value="Euro">Euro</option>
-            <option value="Libra">Libra</option>
+            <option value="Peso">Peso Argentino</option>
           </select>
         </div>
       </div>
       <div>
+        
         <Button onButtonClick={buttonHandler} />
-
-        <p>{result}</p>
+        
       </div>
+      <p>{result}</p>
     </>
   );
 }

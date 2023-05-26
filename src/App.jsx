@@ -1,13 +1,13 @@
 
 import './App.css'
-import Converter from './components/converter'
+import Converter from './components/Converter'
 
 function App() {
   
 
   return (
     <>
-      <h3>Currency Converter</h3>
+      <h3>Conversor de Moeda</h3>
       
       <Converter />
       
